@@ -1,0 +1,2 @@
+plt.savefig("results/accuracy_graph.png") 
+plt.savefig("results/loss_graph.png")
