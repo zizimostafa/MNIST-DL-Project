@@ -1,78 +1,77 @@
-# Handwritten Digit Recognition using CNN
+#  MNIST Deep Learning Project (CNN)
 
-## Project Description
-This project implements a Convolutional Neural Network (CNN)
-for handwritten digit recognition using the MNIST dataset.
+##  Overview
+This project implements a Convolutional Neural Network (CNN) to classify handwritten digits using the MNIST dataset.
 
-The model was built using PyTorch and trained on MNIST images.
-
----
-
-## Dataset
-MNIST Dataset:
-https://pytorch.org/vision/stable/generated/torchvision.datasets.MNIST.html
+The goal is to compare two optimizers:
+- Adam
+- SGD
 
 ---
 
-## Technologies Used
-- Python
-- PyTorch
-- Matplotlib
+##  Dataset
+- MNIST (from torchvision)
+- 60,000 training images
+- 10,000 testing images
+- Image size: 28×28 grayscale
 
 ---
 
-## Model Features
-- Convolutional Layers
-- ReLU Activation
-- Batch Normalization
-- Dropout
+##  Model Architecture
+Simple CNN:
+- Conv Layer (32 filters)
+- ReLU
 - MaxPooling
+- Conv Layer (64 filters)
+- ReLU
+- MaxPooling
+- Fully Connected Layer (128 neurons)
+- Output Layer (10 classes)
 
 ---
 
-## Experiments
+## Training Setup
+- Loss Function: CrossEntropyLoss
+- Epochs: 5
+- Batch Size: 64
 
-### Experiment 1
-- Optimizer: Adam
+---
+
+##  Optimizers
+### Adam
 - Learning Rate: 0.001
 
-### Experiment 2
-- Optimizer: SGD
+### SGD
 - Learning Rate: 0.01
 
 ---
 
-## Results
+##  Results
 
-| Model | Optimizer | Accuracy | Loss |
-|------|------|------|------|
-| CNN Model A | Adam | 98% | 0.05 |
-| CNN Model B | SGD | 96% | 0.12 |
+### Adam
+- Test Accuracy: 99.15%
 
----
-
-## Visualizations
-The project includes:
-- Training Accuracy Graph
-- Training Loss Graph
+### SGD
+- Test Accuracy: 96.99%
 
 ---
 
-## How to Run
+##  Comparison Table
 
-Install requirements:
+| Optimizer | Accuracy |
+|------------|----------|
+| Adam       | 99.15%   |
+| SGD        | 96.99%   |
 
+---
+
+##  Conclusion
+- Adam performs better and converges faster.
+- SGD is slower but still gives good results.
+
+---
+
+##  How to Run
 ```bash
-pip install -r requirements.txt
-```
-
-Run the notebook:
-
-```bash
-jupyter notebook
-```
-
----
-
-## Author
-Zizi Alassal
+pip install torch torchvision
+python main.py
